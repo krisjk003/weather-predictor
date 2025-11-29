@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Predictor</title>
+</head>
+<body>
+    <h1>Weather Prediction Dashboard</h1>
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city (e.g., Chennai)" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>City: {{ city }}</h2>
+        <p>Live Temperature: {{ live.temp }} °C</p>
+        <p>Humidity: {{ live.humidity }}%</p>
+        <p>Pressure: {{ live.pressure }} hPa</p>
+        
+        <h3>Predicted Temperature: {{ prediction }} °C</h3>
+    {% endif %}
+</body>
+</html>
